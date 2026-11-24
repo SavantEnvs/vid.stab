@@ -1,0 +1,10 @@
+project: savantenvs/vid.stab
+target: fuzz_trf_pipeline
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_trf_pipeline/testsuite
+
+cmds:
+  - cmd: /mayhem/build/fuzz/bin/fuzz_trf_pipeline
+    libfuzzer: true
+    timeout: 10

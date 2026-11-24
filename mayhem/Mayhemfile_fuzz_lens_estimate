@@ -1,0 +1,10 @@
+project: savantenvs/vid.stab
+target: fuzz_lens_estimate
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_lens_estimate/testsuite
+
+cmds:
+  - cmd: /mayhem/build/fuzz/bin/fuzz_lens_estimate
+    libfuzzer: true
+    timeout: 10

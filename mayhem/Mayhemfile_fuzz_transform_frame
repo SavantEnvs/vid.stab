@@ -1,0 +1,10 @@
+project: savantenvs/vid.stab
+target: fuzz_transform_frame
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_transform_frame/testsuite
+
+cmds:
+  - cmd: /mayhem/build/fuzz/bin/fuzz_transform_frame
+    libfuzzer: true
+    timeout: 10

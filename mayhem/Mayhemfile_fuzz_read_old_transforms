@@ -1,0 +1,10 @@
+project: savantenvs/vid.stab
+target: fuzz_read_old_transforms
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_read_old_transforms/testsuite
+
+cmds:
+  - cmd: /mayhem/build/fuzz/bin/fuzz_read_old_transforms
+    libfuzzer: true
+    timeout: 10
